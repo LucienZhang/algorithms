@@ -14,3 +14,9 @@ each file can run on its own
 * Prim
 * Quick Select
 * Quick Sort
+
+## How to use it
+
+[learn algorithms](./learn_en.md)   
+
+[学习算法](./learn_zh.md)
