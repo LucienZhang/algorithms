@@ -6,7 +6,7 @@ algorithms implemented by python 3
 algorithms and data structures are implemented by Python 3   
 each file can run on its own
 
-##Implemented Algorithms
+## Implemented Algorithms
 * BFS
 * DFS
 * Dijkstra
