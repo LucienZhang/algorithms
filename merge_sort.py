@@ -2,7 +2,7 @@
 # @Author: Lucien Zhang
 # @Date:   2019-05-26 18:32:14
 # @Last Modified by:   Lucien Zhang
-# @Last Modified time: 2019-05-26 19:11:11
+# @Last Modified time: 2019-05-26 19:16:58
 
 """ merge_sort is for list version
     merge_sort2 is for linked list version
@@ -71,9 +71,8 @@ def merge_sort2(l: List[int])->ListNode:
     if not l:
         return None
     l = [ListNode(e) for e in l]
-    i = 0
-    step = 1
     m = len(l)
+    step = 1
     while step < m:
         i = 0
         while i + step < m:
