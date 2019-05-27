@@ -14,6 +14,8 @@ each file can run on its own
 * Prim
 * Quick Select
 * Quick Sort
+* Merge Sort
+* Binary Search
 
 ## How to use it
 
