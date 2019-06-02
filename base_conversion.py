@@ -2,12 +2,14 @@
 # @Author: Lucien Zhang
 # @Date:   2019-06-02 14:28:28
 # @Last Modified by:   Lucien Zhang
-# @Last Modified time: 2019-06-02 15:14:51
+# @Last Modified time: 2019-06-02 15:22:38
 
 from typing import List
 
 
 def dton(d: int, base: int)->List[int]:
+    """ decimal to any base number
+    """
     if base in [-1, 0, 1] or type(base) != int:
         print(f'wrong base {base}')
         return None
@@ -23,6 +25,8 @@ def dton(d: int, base: int)->List[int]:
 
 
 def ntod(nums: List[int], base: int)->int:
+    """ any base number to decimal
+    """
     ans = 0
     for n in nums:
         ans *= base
