@@ -2,7 +2,7 @@
 # @Author: Lucien Zhang
 # @Date:   2019-05-27 15:09:43
 # @Last Modified by:   Lucien Zhang
-# @Last Modified time: 2019-05-27 16:08:20
+# @Last Modified time: 2019-06-02 16:31:19
 
 """ heapq is the abbreviation of heap queue
     heapq is min heap, to use max heap, use opposite number of the key, i.e. (-key, value)
@@ -13,6 +13,7 @@
 """
 
 import heapq
+import random
 
 
 h = list(range(20, 6, -2))
@@ -94,9 +95,54 @@ print(f'min of the heap, i.e. h[0]: {h[0]}')
 print('-' * 20)
 
 # heapq.merge(*iterables, key=None, reverse=False)
+"""
+    Merge multiple sorted inputs into a single sorted output
+    Returns an iterator over the sorted values
+    Similar to sorted(itertools.chain(*iterables)) but returns an iterable
+    Assumes that each of the input streams is already sorted (smallest to largest)
+    key and reverse must be specified as keyword arguments, because iterables is variable-length argument
+    key specifies a key function of one argument that is used to extract a comparison key from each input element.
+    The default value is None (compare the elements directly).
+    reverse is a boolean value. If set to True, then the input elements are merged as if each comparison were reversed.
+    To achieve behavior similar to sorted(itertools.chain(*iterables), reverse=True), all iterables must be sorted from largest to smallest.
+"""
+
+random.seed(42)
+a = sorted([random.randrange(100) for _ in range(5)])
+b = sorted([random.randrange(100) for _ in range(5)])
+print(f'a is {a}')
+print(f'b is {b}')
+print('merge result is {}'.format(list(heapq.merge(a, b))))
+
+a = sorted([(random.randrange(100), random.randrange(100)) for _ in range(3)], key=lambda x: x[1], reverse=True)
+b = sorted([(random.randrange(100), random.randrange(100)) for _ in range(3)], key=lambda x: x[1], reverse=True)
+print(f'a is {a}')
+print(f'b is {b}')
+print('key=lambda x: x[1], reverse=True, merge result is {}'.format(list(heapq.merge(a, b, key=lambda x: x[1], reverse=True))))
+print('-' * 20)
 
 # heapq.nlargest(n, iterable, key=None)
+"""
+    Return a list with the n largest elements from the dataset defined by iterable.
+    Equivalent to: sorted(iterable, key=key, reverse=True)[:n].
+"""
+a = [random.randrange(100) for _ in range(10)]
+print(f'a is {a}')
+print('3 largest numbers are {}'.format(heapq.nlargest(3, a)))
+print('-' * 20)
 
 # heapq.nsmallest(n, iterable, key=None)
+"""
+    Return a list with the n smallest elements from the dataset defined by iterable.
+    Equivalent to: sorted(iterable, key=key)[:n].
+"""
+a = [random.randrange(100) for _ in range(10)]
+print(f'a is {a}')
+print('3 smallest numbers are {}'.format(heapq.nsmallest(3, a)))
 
-
+"""
+    The latter two functions perform best for smaller values of n.
+    For larger values, it is more efficient to use the sorted() function.
+    Also, when n==1, it is more efficient to use the built-in min() and max() functions.
+    If repeated usage of these functions is required, consider turning the iterable into an actual heap.
+"""
