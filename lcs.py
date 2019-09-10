@@ -2,7 +2,7 @@
 # @Author: Lucien Zhang
 # @Date:   2019-09-10 15:15:21
 # @Last Modified by:   Lucien Zhang
-# @Last Modified time: 2019-09-10 16:21:31
+# @Last Modified time: 2019-09-10 17:34:28
 
 """ longest common subsequence
 Input: x = "abcde", y = "ace"
@@ -15,6 +15,7 @@ the lcs does not need to be ended with x[i] or y[j]
 
 
 def lcs(x: str, y: str)->(int, str):
+    # output string by back tracking
     m = len(x)
     n = len(y)
     dp = [[0] * (n + 1) for _ in range(m + 1)]

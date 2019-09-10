@@ -16,6 +16,9 @@ each file can run on its own
 * Quick Sort
 * Merge Sort
 * Binary Search
+* Longest Common Subsequence
+* Longest Palindromic Subsequence
+* Longest Palindromic Substring  (Dynamic Programming & Manacher's Algorithm)
 
 ## How to use it
 
