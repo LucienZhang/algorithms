@@ -2,7 +2,7 @@
 # @Author: Lucien Zhang
 # @Date:   2019-09-10 15:15:21
 # @Last Modified by:   Lucien Zhang
-# @Last Modified time: 2019-09-10 16:14:45
+# @Last Modified time: 2019-09-10 16:21:31
 
 """ longest common subsequence
 Input: x = "abcde", y = "ace"
@@ -73,8 +73,8 @@ def lcs3(x: str, y: str)->int:
     m = len(x)
     n = len(y)
     dp = [0] * (n + 1)
-    ul = 0  # up_left
     for i in range(m):
+        ul = 0  # up_left
         for j in range(n):
             if x[i] == y[j]:
                 dp[j + 1], ul = ul + 1, dp[j + 1]
@@ -102,6 +102,11 @@ if __name__ == '__main__':
     print("x={},y={},answer is {}".format(x, y, lcs3(x, y)))
     x = ""
     y = ""
+    print("x={},y={},answer is {}".format(x, y, lcs(x, y)))
+    print("x={},y={},answer is {}".format(x, y, lcs2(x, y)))
+    print("x={},y={},answer is {}".format(x, y, lcs3(x, y)))
+    x = "mhunuzqrkzsnidwbun"
+    y = "szulspmhwpazoxijwbq"
     print("x={},y={},answer is {}".format(x, y, lcs(x, y)))
     print("x={},y={},answer is {}".format(x, y, lcs2(x, y)))
     print("x={},y={},answer is {}".format(x, y, lcs3(x, y)))
