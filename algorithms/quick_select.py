@@ -8,7 +8,7 @@
 """
 
 from typing import List
-from partition import Lomuto
+from algorithms.partition import Lomuto
 
 
 def QuickSelect(L: List[int], target_index: int) -> int:

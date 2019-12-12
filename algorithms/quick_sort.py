@@ -5,7 +5,7 @@
 # @Last Modified time: 2019-04-07 20:29:29
 
 from typing import List
-from partition import Hoare
+from algorithms.partition import Hoare
 
 
 def QuickSort(L: List[int], low: int, high: int) -> None:
