@@ -96,7 +96,7 @@ def binary_search_lower_pos(A: List[int], K: int) -> int:
         return 0
 
     left = 0
-    right = len(A) - 1
+    right = len(A)
     while left < right:
         mid = (left + right) // 2
         if A[mid] == K:
