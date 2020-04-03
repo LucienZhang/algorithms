@@ -11,6 +11,8 @@
 
 # functools.lru_cache
 
+from collections import OrderedDict
+
 
 class Node(object):
     def __init__(self, val: str, key: int):
@@ -85,3 +87,21 @@ class LRU(object):
             self.nodes[key] = new_node
             # O(1)
             self._insert_node_at_head(new_node)
+
+
+class LRU2(object):
+    def __init__(self, size):
+        self._size = size
+        self._d = OrderedDict()
+
+    def get(self, key) -> str:
+        if key in self._d:
+            self._d.move_to_end(key)
+            return self._d[key]
+        else:
+            return None
+
+    def put(self, key, value):
+        self._d[key] = value
+        if len(self._d) > self._size:
+            self._d.popitem(last=False)
