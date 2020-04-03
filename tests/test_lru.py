@@ -7,9 +7,14 @@ sys.path.append(str(base_dir))
 
 
 @pytest.mark.sample
-def test_binary_search():
-    from data_structure.lru import LRU
-    lru = LRU(5)
+def test_lru():
+    from data_structure.lru import LRU, LRU2
+    check(LRU)
+    check(LRU2)
+
+
+def check(implementation):
+    lru = implementation(5)
     assert lru.get(3) is None
     lru.put(0, 'a')
     assert lru.get(0) == 'a'
